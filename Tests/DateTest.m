@@ -24,6 +24,7 @@
 @interface DateTest : GHTestCase
 
 - (void)checkMidnightOfDate:(NSDate *)date;
+- (void)checkNextMidnightOfDate:(NSDate *)date;
 
 @end
 
@@ -103,6 +104,25 @@
 	GHAssertEquals(0, dateAsMidnight.utcHour, @"Hour should be 0");
 	GHAssertEquals(0, dateAsMidnight.utcMinute, nil);
 	GHAssertEquals(0, dateAsMidnight.utcSecond, nil);	
+}
+
+- (void)testDateAsNextMidnight {
+	[self checkNextMidnightOfDate:[NSDate distantPast]];
+	[self checkNextMidnightOfDate:[NSDate dateWithTimeIntervalSince1970:0]];
+	[self checkNextMidnightOfDate:[NSDate dateWithTimeIntervalSinceReferenceDate:0]];
+	[self checkNextMidnightOfDate:[NSDate date]];
+	[self checkNextMidnightOfDate:[NSDate distantFuture]];
+}
+
+- (void)checkNextMidnightOfDate:(NSDate *)date {
+	NSDate *dateAsNextMidnight = [date dateAsNextMidnight];
+	
+	GHAssertEquals(dateAsNextMidnight.utcYear, date.utcYear, @"Year should match");
+	GHAssertEquals(dateAsNextMidnight.utcMonth, date.utcMonth, nil);
+	GHAssertEquals(dateAsNextMidnight.utcDay, date.utcDay, nil);
+	GHAssertEquals(23, dateAsNextMidnight.utcHour, @"Hour should be 23");
+	GHAssertEquals(59, dateAsNextMidnight.utcMinute, nil);
+	GHAssertEquals(59, dateAsNextMidnight.utcSecond, nil);
 }
 
 @end

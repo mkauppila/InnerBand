@@ -203,7 +203,23 @@
 	return [_calendar dateFromComponents:_datecomp];
 }
 
-- (BOOL)isSameDay:(NSDate *)rhs { 
+- (NSDate *)dateAsNextMidnight
+{
+    const NSUInteger flags = NSYearCalendarUnit   | NSMonthCalendarUnit |
+                             NSDayCalendarUnit    | NSHourCalendarUnit  |
+                             NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    
+    NSCalendar *_calendar = [NSCalendar currentCalendar];
+    [_calendar setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    NSDateComponents *_components = [_calendar components:flags fromDate:self];
+    _components.hour = 23;
+    _components.minute = 59;
+    _components.second = 59;
+    return [_calendar dateFromComponents:_components];
+}
+
+
+- (BOOL)isSameDay:(NSDate *)rhs {
 	NSCalendar* calendar = [NSCalendar currentCalendar];
 	NSDateComponents *comps = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:self];
 	NSDateComponents *compsRHS = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:rhs];
