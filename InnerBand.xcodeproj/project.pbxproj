@@ -70,6 +70,8 @@
 		02B9624314C51327006A4F8E /* MessageProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 02B9620A14C51327006A4F8E /* MessageProcessor.h */; };
 		02B9624414C51327006A4F8E /* MessageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B9620B14C51327006A4F8E /* MessageProcessor.m */; };
 		02ED4CE41472F67200EA24A5 /* FunctionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED4CE31472F67200EA24A5 /* FunctionTest.m */; };
+		2856C0D615D7FB2C00E8A733 /* StoryboardUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 2856C0D415D7FB2C00E8A733 /* StoryboardUtil.h */; };
+		2856C0D715D7FB2C00E8A733 /* StoryboardUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2856C0D515D7FB2C00E8A733 /* StoryboardUtil.m */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		FF0AB7F912275BEB00EBFE75 /* StringAppenderMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7F412275BEB00EBFE75 /* StringAppenderMessage.m */; };
 		FF0AB7FA12275BEB00EBFE75 /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0AB7F612275BEB00EBFE75 /* Widget.m */; };
@@ -170,6 +172,8 @@
 		02B9620A14C51327006A4F8E /* MessageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageProcessor.h; sourceTree = "<group>"; };
 		02B9620B14C51327006A4F8E /* MessageProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageProcessor.m; sourceTree = "<group>"; };
 		02ED4CE31472F67200EA24A5 /* FunctionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionTest.m; sourceTree = "<group>"; };
+		2856C0D415D7FB2C00E8A733 /* StoryboardUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryboardUtil.h; sourceTree = "<group>"; };
+		2856C0D515D7FB2C00E8A733 /* StoryboardUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardUtil.m; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libInnerBand.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libInnerBand.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF0AB7F312275BEB00EBFE75 /* StringAppenderMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringAppenderMessage.h; sourceTree = "<group>"; };
@@ -340,6 +344,8 @@
 			children = (
 				02B961F714C51327006A4F8E /* ViewUtil.h */,
 				02B961F814C51327006A4F8E /* ViewUtil.m */,
+				2856C0D415D7FB2C00E8A733 /* StoryboardUtil.h */,
+				2856C0D515D7FB2C00E8A733 /* StoryboardUtil.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -577,6 +583,7 @@
 				021717AB14D5C26D0005686A /* ARCMacros.h in Headers */,
 				02663B45151BA7DC008BFE71 /* NSString+XMLEncoding.h in Headers */,
 				0221741C151D0B0100EBF9F6 /* TargetAction.h in Headers */,
+				2856C0D615D7FB2C00E8A733 /* StoryboardUtil.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +698,7 @@
 				02B9624414C51327006A4F8E /* MessageProcessor.m in Sources */,
 				02663B46151BA7DC008BFE71 /* NSString+XMLEncoding.m in Sources */,
 				0221741D151D0B0100EBF9F6 /* TargetAction.m in Sources */,
+				2856C0D715D7FB2C00E8A733 /* StoryboardUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
