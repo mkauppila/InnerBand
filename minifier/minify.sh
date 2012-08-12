@@ -8,13 +8,17 @@ shopt -s nullglob
 DIRNAME=`dirname $0`
 BOOSTDIR=$DIRNAME/../InnerBand
 
-if [ $# != 1 -o "$1" = "all" -a "$1" = "core" ]
-then
-	printf 'USAGE: %s all|core\n' $0
+usage() {
+	printf 'USAGE: %s all|core [installation path]\n' $0
 	exit 1
-fi
+}
+
+# verify command line arguments
+test $# -lt 1 -o $# -gt 2 && usage
+test "$1" != "all" -a "$1" != "core" && usage
 
 INCLUSION=$1
+INSTALL_PATH=$2
 
 if [ $INCLUSION = 'all' ]
 then
@@ -29,8 +33,14 @@ else
 	SOURCE_FILES="$BOOSTDIR/Core/*.m $BOOSTDIR/Core/*/*.m $BOOSTDIR/Core*Data/*.m $BOOSTDIR/Message*Center/*.m $BOOSTDIR/Message*Center/*/*.m"
 fi
 
-INNERBAND_HEADER_FILE=$HOME/Desktop/$INCLUDE_FILENAME
-INNERBAND_SOURCE_FILE=$HOME/Desktop/$CODE_FILENAME
+if [ -z $INSTALL_PATH ]
+then
+	# No install path specified, use the users desktop
+	INSTALL_PATH="$HOME/Desktop" 
+fi
+
+INNERBAND_HEADER_FILE="$INSTALL_PATH/$INCLUDE_FILENAME"
+INNERBAND_SOURCE_FILE="$INSTALL_PATH/$CODE_FILENAME"
 
 cat > $INNERBAND_HEADER_FILE <<EOF
 //
